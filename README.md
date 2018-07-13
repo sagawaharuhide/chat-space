@@ -16,7 +16,7 @@
 |------|----|-------|
 |user_id|references|:user, null: false, foreign_key: true|
 |group_id|references|:group, null: false, foreign_key: true|
-|body|text|null: false|
+|body|text||
 |image|text||
 
 ### Association
