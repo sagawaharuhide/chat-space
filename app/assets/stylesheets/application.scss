@@ -7,3 +7,40 @@
   width: 100%;
   color:#FFFFFF
  }
+
+.left-contents{
+  height: 100%;
+  width: 300px;
+  background-color:#2f3e51;
+
+  .top-box{
+    background-color:#253141;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding-bottom:0 20px;
+    height: 100px;
+    width: 100%;
+    .name{
+      padding-left: 20px;
+      padding-top: 35px
+    }
+  }
+
+  .bottom-box{
+    height: calc(100vh - 100px);
+    .group-name{
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    color: #FFFFFF;
+    }
+    .message{
+    font-size: 11px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    color: #FFFFFF;
+    }
+  }
+ }
