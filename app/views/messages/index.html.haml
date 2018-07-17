@@ -10,8 +10,7 @@
         = link_to "#" do
           =fa_icon "cog"
     .bottom-box
-      %h3.group-name groupname
-      %h4.message message
+      = render 'group'
   .main-contents
     .main-header
       .left-header
@@ -22,12 +21,7 @@
           = link_to "#", class: "edit-button" do
             Edit
     .message-contents
-      .message-box
-        .upper-message
-          .message-name sagawa
-          .message-date 2018/07/14 03:58
-        .lower-message
-          .message-content Hello!
+      = render 'message'
     .form
       %input#message_content.form__message.js-content{name: "message[content]", placeholder: "type a message", type: "text"}/
       .form__mask
