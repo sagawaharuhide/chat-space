@@ -25,4 +25,12 @@
         .lower-message
           .message-content Hello!
     .form
+      %input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+      .form__mask
+        %form{:action => "./filesend.cgi", :enctype => "multipart/form-data", :method => "post"}
+          %label
+            .filelabel
+              %i.fa.fa-picture-o.icon
+            %input.filesend{:name => "datafile", :type => "file"}/
+      %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
 
