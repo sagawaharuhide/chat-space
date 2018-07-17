@@ -5,8 +5,10 @@
     .top-box
       .name name
       .header-lists
-        <i class="fa fa-pencil-square-o icon"></i>
-        <i class="fa fa-cog icon"></i>
+        = link_to "groups/new" do
+          %i.fa.fa-pencil-square-o.icon
+        = link_to "edit" do
+          %i.fa.fa-cog.icon
     .bottom-box
       %h3.group-name groupname
       %h4.message message
@@ -16,7 +18,9 @@
         %h2.header-name groupname
         %h3.header-member Member: sagawa
       .right-header
-        %a.edit-button Edit
+        .edit-button
+          = link_to "#", class: "edit-button" do
+            Edit
     .message-contents
       .message-box
         .upper-message
