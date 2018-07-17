@@ -1,28 +1,28 @@
-!!!
-%html
-  %body
-    .top-bar
-      チャットページが作成されました。
-    .wrapper
-      .left-contents
-        .top-box
-          %h2.name name
-        .bottom-box
-          %h3.group-name groupname
-          %h4.message message
-      .main-contents
-        .main-header
-          .left-header
-            %h2.header-name groupname
-            %h3.header-member Member: sagawa
-          .right-header
-            %a.edit-button Edit
-        .message-contents
-          .message-box
-            .upper-message
-              .message-name sagawa
-              .message-date 2018/07/14 03:58
-            .lower-message
-              .message-content Hello!
-        .form
+.top-bar
+  チャットページが作成されました。
+.wrapper
+  .left-contents
+    .top-box
+      .name name
+      .header-lists
+        <i class="fa fa-pencil-square-o icon"></i>
+        <i class="fa fa-cog icon"></i>
+    .bottom-box
+      %h3.group-name groupname
+      %h4.message message
+  .main-contents
+    .main-header
+      .left-header
+        %h2.header-name groupname
+        %h3.header-member Member: sagawa
+      .right-header
+        %a.edit-button Edit
+    .message-contents
+      .message-box
+        .upper-message
+          .message-name sagawa
+          .message-date 2018/07/14 03:58
+        .lower-message
+          .message-content Hello!
+    .form
 

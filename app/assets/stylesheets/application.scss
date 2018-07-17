@@ -1,4 +1,5 @@
 @import "./reset";
+@import "font-awesome";
 
 .top-bar{
   background-color: #38AEF0;
@@ -24,9 +25,16 @@
       padding-bottom:0 20px;
       height: 100px;
       width: 100%;
+      position: relative;
       .name{
         padding-left: 20px;
-        padding-top: 35px
+        padding-top: 35px;
+        float: left;
+      }
+      .header-lists{
+        position: absolute;
+        right: 20px;
+        padding-top: 35px;
       }
     }
 
