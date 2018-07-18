@@ -1,0 +1,34 @@
+.top-bar
+  チャットページが作成されました。
+.wrapper
+  .left-contents
+    .top-box
+      .top-box__name name
+      .top-box__header-lists
+        = link_to "#" do
+          =fa_icon "pencil-square-o"
+        = link_to "#" do
+          =fa_icon "cog"
+    .bottom-box
+      = render 'group'
+  .main-contents
+    .main-header
+      .main-header__left-header
+        %h2.header-name groupname
+        %h3.header-member Member: sagawa
+      .main-header__right-header
+        .main-header__right-header__edit-button
+          = link_to "#", class: "edit-button" do
+            Edit
+    .message-contents
+      = render 'message'
+    .form
+      %input#message_content.form__message.js-content{name: "message[content]", placeholder: "type a message", type: "text"}/
+      .form__form__mask
+        %form{action: "./filesend.cgi", enctype: "multipart/form-data", method: "post"}
+          %label
+            .filelabel
+              %i.fa.fa-picture-o.icon
+            %input.filesend{name: "datafile", type: "file"}/
+      %input.form__submit{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
+
