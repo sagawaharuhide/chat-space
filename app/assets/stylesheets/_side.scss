@@ -12,12 +12,12 @@
       height: 100px;
       width: 100%;
       position: relative;
-      .name{
+      &__name{
         padding-left: 20px;
         padding-top: 35px;
         float: left;
       }
-      .header-lists{
+      &__header-lists{
         position: absolute;
         right: 20px;
         padding-top: 35px;
