@@ -74,7 +74,7 @@
       box-sizing: border-box;
       height: 90px;
       padding: 20px 50px 20px 40px;
-      .form__message {
+      &__message {
         border: none;
         box-sizing: border-box;
         float: left;
@@ -95,7 +95,7 @@
           display: none;
         }
       }
-      .form__submit {
+      &__submit {
         background-color: $blueColor;
         border: none;
         color: $whiteColor;
