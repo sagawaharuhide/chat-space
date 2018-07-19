@@ -4,7 +4,7 @@
       .top-box__name
         = current_user.name
       .top-box__header-lists
-        = link_to "#" do
+        = link_to new_group_path do
           =fa_icon "pencil-square-o"
         = link_to edit_user_path(current_user) do
           =fa_icon 'cog', class: 'icon'
