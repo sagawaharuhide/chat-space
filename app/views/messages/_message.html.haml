@@ -1,6 +1,11 @@
 .message-contents__message-box
   .message-contents__message-box__upper-message
-    .message-name sagawa
-    .message-date 2018/07/14 03:58
+    .message-name
+      = message.user.name
+    .message-date
+      = message.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M")
   .message-contents__message-box__lower-message
-    .message-content Hello!
+    - if message.content.present?
+      .message-content
+        = message.content
+    = image_tag message.image.url, class: 'message-contents__message-box__lower-message' if message.image.present?

@@ -20,14 +20,14 @@
           = link_to "#", class: "edit-button" do
             Edit
     .message-contents
-      = render partial: 'message'
+      = render @messages
     .form
-      %input#message_content.form__message.js-content{name: "message[content]", placeholder: "type a message", type: "text"}/
-      .form__form__mask
-        %form{action: "./filesend.cgi", enctype: "multipart/form-data", method: "post"}
-          %label
-            .filelabel
-              %i.fa.fa-picture-o.icon
-            %input.filesend{name: "datafile", type: "file"}/
-      %input.form__submit{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
 
