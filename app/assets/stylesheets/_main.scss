@@ -82,17 +82,17 @@
         padding: 0 10px;
         width: calc(100% - 150px);
       }
-      &__form__mask{
+      &__mask{
         background-color: $whiteColor;
         float: left;
         height: 50px;
         padding-right: 10px;
-        .filelabel{
+        &__image{
           font-size: 20px;
           line-height: 50px;
-        }
-        .filesend {
+          .hidden{
           display: none;
+        }
         }
       }
       &__submit {
