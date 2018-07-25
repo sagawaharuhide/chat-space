@@ -17,8 +17,8 @@
           = @group.name
         %h3.header-member
           Member:
-          - @group.users.each do |person|
-            = person.name
+          - @group.users.each do |user|
+            = user.name
       .main-header__right-header
         .main-header__right-header__edit-button
           = link_to "#", class: "edit-button" do
