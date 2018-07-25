@@ -36,10 +36,9 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      console.log(html)
-      $('.message-contents__message-box').append(html);
-      $('.form__message').val('')
+      $('.message-contents').append(html);
       $('.form__submit').prop('disabled', false);
+      $('#new_message')[0].reset();
       $('.message-contents').animate({scrollTop: $('.message-contents')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
