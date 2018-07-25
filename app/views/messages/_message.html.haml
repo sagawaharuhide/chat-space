@@ -8,4 +8,4 @@
     - if message.content.present?
       .message-content
         = message.content
-    = image_tag message.image.url, class: 'message-contents__message-box__lower-message' if message.image.present?
+    = image_tag message.image.url, class: 'message-contents__message-box__lower-message' if message.image.url.present?
