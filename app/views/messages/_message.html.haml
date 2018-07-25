@@ -3,9 +3,9 @@
     .message-name
       = message.user.name
     .message-date
-      = message.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M")
+      = message.created_at.to_s
   .message-contents__message-box__lower-message
     - if message.content.present?
       .message-content
         = message.content
-    = image_tag message.image.url, class: 'message-contents__message-box__lower-message' if message.image.present?
+    = image_tag message.image.url, class: 'message-contents__message-box__lower-message' if message.image.url.present?
