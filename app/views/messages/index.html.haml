@@ -17,7 +17,7 @@
           = @group.name
         %h3.header-member
           Member:
-          - @groupmembers.each do |person|
+          - @group.users.each do |person|
             = person.name
       .main-header__right-header
         .main-header__right-header__edit-button
