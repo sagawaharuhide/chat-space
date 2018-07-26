@@ -26,8 +26,9 @@ $(document).on('turbolinks:load', function(){
 
     $("#user-search-field").on("keyup", function() {
       var input = $("#user-search-field").val();
-      console.log(input);
-
+      if (input.length === 0) {
+        $("#user-search-result").empty();
+      }else{
       $.ajax({
         type: 'GET',
         url: '/users',
@@ -47,7 +48,8 @@ $(document).on('turbolinks:load', function(){
      })
       .fail(function() {
         alert('ユーザー検索に失敗しました')
-      })
+      });
+    }
     });
     $("#user-search-result").on("click", ".chat-group-user__btn--add", function(e){
       var name = $(this).data("user-name");
