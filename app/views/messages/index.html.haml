@@ -21,7 +21,7 @@
             = user.name
       .main-header__right-header
         .main-header__right-header__edit-button
-          = link_to "#", class: "edit-button" do
+          = link_to edit_group_path(@group), class: "edit-button" do
             Edit
     .message-contents
       = render @messages
