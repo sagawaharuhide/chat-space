@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function(){
       .done(function(data){
         var html = buildHTML(data);
         $('.message-contents').append(html);
-        $('.form__submit').prop('disabled', false);
+        $('.form__submit').removeAttr('disabled');
         $('#new_message')[0].reset();
         scroll()
       })
