@@ -8,6 +8,7 @@ $(document).on('turbolinks:load', function(){
                    </div>`
     search_list.append(html);
     }
+
     function appendNoUser(user) {
       var html = `<div class="chat-group-user clearfix">
                       <p class="chat-group-user__name">${ name }</p>
@@ -29,12 +30,12 @@ $(document).on('turbolinks:load', function(){
       if (input.length === 0) {
         $("#user-search-result").empty();
       }else{
-      $.ajax({
-        type: 'GET',
-        url: '/users',
-        data: { keyword: input },
-        dataType: 'json'
-      })
+        $.ajax({
+          type: 'GET',
+          url: '/users',
+          data: { keyword: input },
+          dataType: 'json'
+        })
       .done(function(data) {
        $("#user-search-result").empty();
        if (data.length !== 0) {
