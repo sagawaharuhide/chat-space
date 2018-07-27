@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function(){
       var name = $(this).data("user-name");
       var user_id = $(this).data("user-id");
       appendAddUser(name, user_id);
-      $($(this).parent()).remove();
+      $(this).parent().remove();
     });
     $("#chat-group-users").on("click", ".js-remove-btn", function(e){
         $(this).parent().remove();
