@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
     function buildHTML(message){
       var img = message.image ? `<img src="${ message.image }">` : "";
 
-      var html = `<div class="message-contents__message-box">
+      var html = `<div class="message-contents__message-box" data-id="${message.id}">
                     <div class="message-contents__message-box__upper-message">
                       <div class="message-name">
                         ${ message.name }
@@ -49,5 +49,37 @@ $(document).on('turbolinks:load', function(){
         alert('error');
       })
     });
+
+    var interval = setInterval(update, 5000);
+    function update(){
+      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+        if($('.message-contents__message-box:last')[0]){
+          var message_id = $('.message-contents__message-box:last').data('id');
+        }else{
+          var message_id = 0
+        }
+        $.ajax({
+          url: location.href,
+          type: 'GET',
+          data: {
+            message: { id: message_id }
+          },
+          dataType: 'json'
+        })
+        .done(function(data){
+          var insertHTML = '';
+          if (data.length !== 0){
+            data.forEach(function(data){
+              insertHTML += buildHTML(data);
+            });
+            $('.message-contents').append(insertHTML);
+            scroll();
+          }
+        });
+      }
+      else{
+        clearInterval(interval);
+      }
+    }
   });
 });
