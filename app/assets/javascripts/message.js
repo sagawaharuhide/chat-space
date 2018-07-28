@@ -53,29 +53,29 @@ $(document).on('turbolinks:load', function(){
     var interval = setInterval(update, 5000);
     function update(){
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      if($('.message-contents__message-box:last')[0]){
-        var message_id = $('.message-contents__message-box:last').data('id');
-      }else{
-        var message_id = 0
-      }
-      $.ajax({
-        url: location.href,
-        type: 'GET',
-        data: {
-          message: { id: message_id }
-        },
-        dataType: 'json'
-      })
-      .done(function(data){
-        var insertHTML = '';
-        if (data.length !== 0){
-          data.forEach(function(data){
-            insertHTML += buildHTML(data);
-          });
-          $('.message-contents').append(insertHTML);
-          scroll();
+        if($('.message-contents__message-box:last')[0]){
+          var message_id = $('.message-contents__message-box:last').data('id');
+        }else{
+          var message_id = 0
         }
-      });
+        $.ajax({
+          url: location.href,
+          type: 'GET',
+          data: {
+            message: { id: message_id }
+          },
+          dataType: 'json'
+        })
+        .done(function(data){
+          var insertHTML = '';
+          if (data.length !== 0){
+            data.forEach(function(data){
+              insertHTML += buildHTML(data);
+            });
+            $('.message-contents').append(insertHTML);
+            scroll();
+          }
+        });
       }
       else{
         clearInterval(interval);
