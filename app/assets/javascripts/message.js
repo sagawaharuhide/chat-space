@@ -40,11 +40,16 @@ $(document).on('turbolinks:load', function(){
       })
       .done(function(data){
         var html = buildHTML(data);
-        $('.message-contents').append(html);
-        $('.form__submit').removeAttr('disabled');
-        $('#new_message')[0].reset();
-        scroll()
-      })
+        if (data.length !== 0){
+          $('.message-contents').append(html);
+          $('.form__submit').removeAttr('disabled');
+          $('#new_message')[0].reset();
+          scroll()
+        }else{
+          $('.form__submit').removeAttr('disabled');
+          alert('メッセージを入力してください');
+        }
+        })
       .fail(function(){
         alert('error');
       })
